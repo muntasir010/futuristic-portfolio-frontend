@@ -27,7 +27,7 @@ const Hero = () => {
           <div className="mt-6 flex gap-4">
             <button className="rounded-xl bg-neon px-6 py-3 text-black transition hover:scale-105">
               <a
-                href="/public/NAEEM MUNTASIR ASIF.pdf"
+                href="/public/resume/NAEEM MUNTASIR ASIF.pdf"
                 download
                 className="rounded-2xl border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
               >
