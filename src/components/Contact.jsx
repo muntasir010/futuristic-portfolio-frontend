@@ -36,7 +36,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="relative mx-auto mt-32 w-[94%] max-w-6xl overflow-hidden pb-20">
+    <section id="contact" className="relative mx-auto mt-10 md:mt-20 w-[94%] max-w-6xl overflow-hidden">
       {/* Scroll Animation with Framer Motion */}
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}

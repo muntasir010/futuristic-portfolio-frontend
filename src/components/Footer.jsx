@@ -4,7 +4,7 @@ import { Github, Linkedin, Mail, Facebook, Twitter } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="relative mt-32 border-t border-white/10 bg-glass backdrop-blur-xl overflow-hidden">
+    <footer className="relative mt-10 md:mt-20 border-t border-white/10 bg-glass backdrop-blur-xl overflow-hidden">
       {/* Background Decorative Glow */}
       <div className="absolute -top-24 left-1/2 -translate-x-1/2 h-40 w-80 bg-neon/5 blur-[100px] -z-10" />
 
