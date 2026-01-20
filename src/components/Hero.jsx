@@ -32,14 +32,18 @@ const Hero = () => {
         </div>
 
         {/* Right Avatar */}
-        <div className="relative mx-auto h-64 w-64">
-          <img
+           <div className="relative mx-auto w-64 h-64 md:w-80 md:h-80 rounded-full border border-white/10 flex items-center justify-center backdrop-blur-md bg-white/5 shadow-2xl transition-transform duration-500 group-hover:scale-105">
+             <div className="absolute inset-0 rounded-full border-t-2 border-blue-500 animate-spin"></div>
+             
+             {/* 3D Avatar Image Placeholder */}
+             <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-blue-400/30">
+               <img
             src={avatar}
             alt="Asif Avatar"
             className="h-full w-full rounded-full object-cover border border-white/20"
           />
-          <div className="absolute inset-0 rounded-full ring-2 ring-neon/40 blur-sm"></div>
-        </div>
+             </div>
+          </div>
       </div>
     </section>
   );
