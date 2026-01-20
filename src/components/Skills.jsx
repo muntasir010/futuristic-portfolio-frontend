@@ -9,7 +9,7 @@ const skills = [
 
 const Skills = () => {
   return (
-    <section className="mx-auto mt-10 md:mt-20 w-[92%] max-w-6xl">
+    <section id="skills" className="mx-auto mt-10 md:mt-20 w-[92%] max-w-6xl">
 
       <h2 className="mb-10 text-center text-3xl font-bold">
         My <span className="text-neon">Skills</span>

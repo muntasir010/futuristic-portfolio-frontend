@@ -7,3 +7,7 @@ body {
   color: white;
   font-family: 'Inter', sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 170px;
+}

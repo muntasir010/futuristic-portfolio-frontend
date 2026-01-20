@@ -9,7 +9,7 @@ const Projects = () => {
   const [active, setActive] = useState(null);
 
   return (
-    <section className="mx-auto mt-10 md:mt-20 w-[92%] max-w-6xl text-white">
+    <section id="projects" className="mx-auto mt-10 md:mt-20 w-[92%] max-w-6xl text-white">
       <h2 className="mb-10 text-center text-3xl font-bold tracking-tight">
         My <span className="text-neon shadow-neon">Projects</span>
       </h2>
