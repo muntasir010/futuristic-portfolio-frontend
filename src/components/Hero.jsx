@@ -1,59 +1,171 @@
+/* eslint-disable no-unused-vars */
+// import avatar from "../assets/naeem.png";
+
+// const Hero = () => {
+
+//   return (
+//     <section className="relative mx-auto mt-40 w-[92%] max-w-6xl rounded-3xl border border-white/10 bg-glass p-10 backdrop-blur-xl shadow-xl shadow-black/40">
+//       {/* Glow Effect */}
+//       <div className="absolute -top-20 -right-20 h-72 w-72 rounded-full bg-neon/20 blur-3xl"></div>
+
+//       <div className="grid items-center gap-10 md:grid-cols-2">
+//         {/* Left Content */}
+//         <div>
+//           <h1 className="text-4xl font-bold leading-tight">
+//             Hi, I’m <span className="text-neon">Naeem Muntasir Asif</span>{" "}
+//             <br />
+//             Full Stack Developer
+//           </h1>
+
+//           <p className="mt-4 text-white/70">
+//             I build modern, scalable and futuristic web applications using React
+//             and modern UI principles.
+//           </p>
+
+//           <div className="mt-6 flex gap-4">
+//             <button className="rounded-xl bg-neon px-6 py-3 text-black transition hover:scale-105">
+//               <a
+//                 href="/public/resume/NAEEM MUNTASIR ASIF.pdf"
+//                 download
+//                 className="rounded-2xl border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+//               >
+//                 Download Resume
+//               </a>
+//             </button>
+
+//             <button className="rounded-xl border border-white/20 px-6 py-3 text-white transition hover:border-neon">
+//               Contact Me
+//             </button>
+//           </div>
+//         </div>
+
+//         {/* Right Avatar */}
+//         <div className="relative mx-auto w-64 h-64 md:w-80 md:h-80 rounded-full border border-white/10 flex items-center justify-center backdrop-blur-md bg-white/5 shadow-2xl transition-transform duration-500 group-hover:scale-105">
+//           <div className="absolute inset-0 rounded-full border-t-2 border-blue-500 animate-spin"></div>
+
+//           {/* 3D Avatar Image Placeholder */}
+//           <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-blue-400/30">
+//             <img
+//               src={avatar}
+//               alt="Asif Avatar"
+//               className="h-full w-full rounded-full object-cover border border-white/20"
+//             />
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default Hero;
+
+
+import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import avatar from "../assets/naeem.png";
 
 const Hero = () => {
-  // const scrollToContact = () => {
-  //   document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-  // };
+  const [displayText, setDisplayText] = useState("");
+  const fullText = "Naeem Muntasir Asif";
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [index, setIndex] = useState(0);
+
+  // Typewriter Logic
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      if (!isDeleting && index < fullText.length) {
+        setDisplayText((prev) => prev + fullText.charAt(index));
+        setIndex((prev) => prev + 1);
+      } else if (isDeleting && index > 0) {
+        setDisplayText((prev) => prev.slice(0, -1));
+        setIndex((prev) => prev - 1);
+      } else if (index === fullText.length) {
+        setTimeout(() => setIsDeleting(true), 2000); 
+      } else if (index === 0 && isDeleting) {
+        setIsDeleting(false);
+      }
+    }, isDeleting ? 100 : 150);
+
+    return () => clearTimeout(timeout);
+  }, [index, isDeleting]);
 
   return (
-    <section className="relative mx-auto mt-40 w-[92%] max-w-6xl rounded-3xl border border-white/10 bg-glass p-10 backdrop-blur-xl shadow-xl shadow-black/40">
-      {/* Glow Effect */}
-      <div className="absolute -top-20 -right-20 h-72 w-72 rounded-full bg-neon/20 blur-3xl"></div>
+    <section id="home" className="relative mx-auto mt-40 w-[92%] max-w-6xl rounded-3xl border border-white/10 bg-glass p-10 backdrop-blur-xl shadow-xl shadow-black/40 overflow-hidden">
+      
+      {/* Background Glow Effect */}
+      <div className="absolute -top-20 -right-20 h-72 w-72 rounded-full bg-neon/20 blur-[100px] -z-10 animate-pulse"></div>
 
       <div className="grid items-center gap-10 md:grid-cols-2">
-        {/* Left Content */}
-        <div>
-          <h1 className="text-4xl font-bold leading-tight">
-            Hi, I’m <span className="text-neon">Naeem Muntasir Asif</span>{" "}
+        
+        {/* Left Content with Animations */}
+        <motion.div 
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight text-white">
+            Hi, I’m <br />
+            <span className="text-neon min-h-[1.2em] inline-block">
+              {displayText}
+              <span className="animate-pulse ml-1">|</span>
+            </span>
             <br />
-            Full Stack Developer
+            <motion.span 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              className="text-2xl md:text-3xl font-medium text-white/90"
+            >
+              Full Stack Developer
+            </motion.span>
           </h1>
 
-          <p className="mt-4 text-white/70">
+          <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8 }}
+            className="mt-6 text-white/70 text-lg max-w-md"
+          >
             I build modern, scalable and futuristic web applications using React
             and modern UI principles.
-          </p>
+          </motion.p>
 
-          <div className="mt-6 flex gap-4">
-            <button className="rounded-xl bg-neon px-6 py-3 text-black transition hover:scale-105">
-              <a
-                href="/public/resume/NAEEM MUNTASIR ASIF.pdf"
-                download
-                className="rounded-2xl border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
-                Download Resume
-              </a>
-            </button>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1 }}
+            className="mt-8 flex flex-wrap gap-4"
+          >
+            <a
+              href="/resume/NAEEM MUNTASIR ASIF.pdf"
+              download
+              className="rounded-xl bg-neon px-8 py-4 text-sm font-bold text-black transition hover:scale-105 hover:shadow-neon"
+            >
+              Download Resume
+            </a>
 
-            <button className="rounded-xl border border-white/20 px-6 py-3 text-white transition hover:border-neon">
+            <a 
+              href="#contact"
+              className="rounded-xl border border-white/20 bg-white/5 px-8 py-4 text-sm font-bold text-white transition hover:border-neon hover:bg-neon/10"
+            >
               Contact Me
-            </button>
-          </div>
-        </div>
+            </a>
+          </motion.div>
+        </motion.div>
 
-        {/* Right Avatar */}
-        <div className="relative mx-auto w-64 h-64 md:w-80 md:h-80 rounded-full border border-white/10 flex items-center justify-center backdrop-blur-md bg-white/5 shadow-2xl transition-transform duration-500 group-hover:scale-105">
-          <div className="absolute inset-0 rounded-full border-t-2 border-blue-500 animate-spin"></div>
-
-          {/* 3D Avatar Image Placeholder */}
-          <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-blue-400/30">
+        {/* Right Avatar (Keep your original code) */}
+        <div className="relative mx-auto w-64 h-64 md:w-80 md:h-80 rounded-full border border-white/10 flex items-center justify-center backdrop-blur-md bg-white/5 shadow-2xl transition-transform duration-500 hover:scale-105">
+          <div className="absolute inset-0 rounded-full border-t-2 border-neon animate-spin"></div>
+          
+          <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-neon/30 shadow-[0_0_30px_rgba(0,243,255,0.2)]">
             <img
               src={avatar}
               alt="Asif Avatar"
-              className="h-full w-full rounded-full object-cover border border-white/20"
+              className="h-full w-full object-cover"
             />
           </div>
         </div>
+
       </div>
     </section>
   );
