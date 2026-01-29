@@ -7,7 +7,7 @@ const Navbar = () => {
 
   // Resume Download Handler
   const handleResume = () => {
-    const resumeUrl = "../../public/resume/NAEEM MUNTASIR ASIF.pdf";
+    const resumeUrl = "/resume/NAEEM_MUNTASIR_ASIF.pdf";
     window.open(resumeUrl, "_blank");
     const link = document.createElement("a");
     link.href = resumeUrl;
