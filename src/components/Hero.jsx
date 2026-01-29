@@ -76,7 +76,7 @@ const Hero = () => {
             className="mt-8 flex flex-wrap gap-4"
           >
             <a
-              href="/resume/NAEEM MUNTASIR ASIF.pdf"
+              href="/resume/NAEEM_MUNTASIR_ASIF.pdf"
               download
               className="rounded-xl bg-neon px-8 py-4 text-sm font-bold text-black transition hover:scale-105 hover:shadow-neon"
             >

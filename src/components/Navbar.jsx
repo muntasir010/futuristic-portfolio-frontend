@@ -11,7 +11,7 @@ const Navbar = () => {
     window.open(resumeUrl, "_blank");
     const link = document.createElement("a");
     link.href = resumeUrl;
-    link.download = "Naeem_Muntasir_Asif_Resume.pdf";
+    link.download = "/resume/Naeem_Muntasir_Asif.pdf";
     link.click();
   };
 
