@@ -9,13 +9,13 @@ const Projects = () => {
   const [active, setActive] = useState(null);
 
   return (
-    <section id="projects" className="mx-auto mt-10 md:mt-20 w-[92%] max-w-6xl text-white">
+    <section id="projects" className="mx-auto mt-10 md:mt-20 w-full max-w-6xl text-white">
       <h2 className="mb-10 text-center text-3xl font-bold tracking-tight">
         My <span className="text-neon shadow-neon">Projects</span>
       </h2>
 
       {/* Project Cards Grid */}
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, index) => (
           <motion.div
             key={project.id}

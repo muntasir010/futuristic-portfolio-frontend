@@ -5,7 +5,7 @@ import { IoFootball, IoExtensionPuzzle } from 'react-icons/io5';
 
 const About = () => {
   return (
-    <section id='about' className="relative mx-auto mt-10 md:mt-20 w-[94%] max-w-6xl">
+    <section id='about' className="relative mx-auto mt-10 md:mt-20 w-full max-w-6xl">
       <div className="relative rounded-3xl border border-white/15 bg-glass p-8 backdrop-blur-xl shadow-lg shadow-black/40 overflow-hidden">
         
         {/* Header - Neon Style */}

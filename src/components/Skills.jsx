@@ -41,12 +41,12 @@ const skillCategories = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="mx-auto mt-10 md:mt-20 w-[94%] max-w-6xl text-white">
+    <section id="skills" className="mx-auto mt-10 md:mt-20 w-full max-w-6xl text-white">
       <h2 className="mb-12 text-center text-3xl font-bold tracking-tight">
         Technical <span className="text-neon shadow-neon">Skills</span>
       </h2>
 
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {skillCategories.map((category, idx) => (
           <motion.div
             key={idx}

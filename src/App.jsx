@@ -11,12 +11,15 @@ function App() {
   return (
     <>
       <Navbar />
-      <ScrollIndicator />
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
+      <main className="px-2 md:p-8 lg:p-0">
+        <ScrollIndicator />
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
+      </main>
+
       <Footer />
     </>
   );

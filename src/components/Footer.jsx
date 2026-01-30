@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="relative z-[101] mt-10 md:mt-20 border-t border-white/10 bg-glass backdrop-blur-xl overflow-hidden">
       {/* Background Decorative Glow */}
-      <div className="absolute -top-24 left-1/2 -translate-x-1/2 h-40 w-80 bg-neon/5 blur-[100px] -z-10" />
+      <div className="absolute -top-24 left-1/2 -translate-x-1/2 h-40 w-full bg-neon/5 blur-[100px] -z-10" />
 
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 px-6 py-12 md:flex-row md:justify-between">
 
@@ -24,7 +24,7 @@ const Footer = () => {
             <div className="h-14 w-14 rounded-xl bg-neon/10 border border-neon/30 flex items-center justify-center shadow-neon">
                <span className="text-neon font-black text-xl"> <img src={logo} alt="" /></span>
             </div>
-            <h2 className="text-2xl font-bold tracking-tighter text-white">
+            <h2 className="text-2xl md:text-2xl font-bold tracking-tighter text-white">
               Naeem <span className="text-neon">Muntasir</span> Asif
             </h2>
            

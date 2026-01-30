@@ -29,7 +29,7 @@ const Hero = () => {
   }, [index, isDeleting]);
 
   return (
-    <section id="home" className="relative mx-auto mt-40 w-[92%] max-w-6xl rounded-3xl border border-white/10 bg-glass p-10 backdrop-blur-xl shadow-xl shadow-black/40 overflow-hidden">
+    <section id="home" className="relative mx-auto mt-32 md:mt-40 w-full max-w-6xl rounded-3xl border border-white/10 bg-glass p-10 backdrop-blur-xl shadow-xl shadow-black/40 overflow-hidden">
       
       {/* Background Glow Effect */}
       <div className="absolute -top-20 -right-20 h-72 w-72 rounded-full bg-neon/20 blur-[100px] -z-10 animate-pulse"></div>
@@ -42,7 +42,7 @@ const Hero = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight text-white">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-white">
             Hi, I’m <br />
             <span className="text-neon min-h-[1.2em] inline-block">
               {displayText}
@@ -63,7 +63,7 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
-            className="mt-6 text-white/70 text-lg max-w-md"
+            className="mt-6 text-white/70 text-sm md:text-lg max-w-md"
           >
             I build modern, scalable and futuristic web applications using React
             and modern UI principles.
