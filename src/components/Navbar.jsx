@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import logo from "../assets/logo.png"
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -37,7 +38,7 @@ const Navbar = () => {
           <a href="#" className="flex items-center gap-2 cursor-pointer">
             <div className="h-14 w-14 rounded-xl bg-neon/10 border border-neon/30 flex items-center justify-center shadow-neon">
               <span className="text-neon font-black text-xl">
-                <img src="/src/assets/logo.png" alt="" />
+                <img src={logo} alt="" />
               </span>
             </div>
             <h1 className="text-xl font-bold tracking-tighter text-white">

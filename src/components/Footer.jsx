@@ -1,10 +1,11 @@
 /* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, Facebook, Twitter } from "lucide-react";
+import logo from "../assets/logo.png"
 
 const Footer = () => {
   return (
-    <footer className="relative mt-10 md:mt-20 border-t border-white/10 bg-glass backdrop-blur-xl overflow-hidden">
+    <footer className="relative z-[101] mt-10 md:mt-20 border-t border-white/10 bg-glass backdrop-blur-xl overflow-hidden">
       {/* Background Decorative Glow */}
       <div className="absolute -top-24 left-1/2 -translate-x-1/2 h-40 w-80 bg-neon/5 blur-[100px] -z-10" />
 
@@ -21,7 +22,7 @@ const Footer = () => {
           <div className="flex items-center gap-3">
             {/* Logo Placeholder - You can use your 3D generated image here */}
             <div className="h-14 w-14 rounded-xl bg-neon/10 border border-neon/30 flex items-center justify-center shadow-neon">
-               <span className="text-neon font-black text-xl"> <img src="/src/assets/logo.png" alt="" /></span>
+               <span className="text-neon font-black text-xl"> <img src={logo} alt="" /></span>
             </div>
             <h2 className="text-2xl font-bold tracking-tighter text-white">
               Naeem <span className="text-neon">Muntasir</span> Asif
